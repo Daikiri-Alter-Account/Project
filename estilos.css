@@ -1,1 +1,36 @@
-/*Primera linea de texto*/
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: #f2f2f2;
+    padding: 20px;
+}
+
+#camera-container {
+    position: relative;
+    width: 90%;
+    max-width: 500px;
+    margin: 20px auto;
+    border: 2px solid #333;
+    background: black;
+}
+
+video {
+    width: 100%;
+    height: auto;
+}
+
+#measure-line {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    height: 4px;
+    width: 0;
+    background: red;
+    cursor: ew-resize;
+}
+
+#message {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-top: 10px;
+}

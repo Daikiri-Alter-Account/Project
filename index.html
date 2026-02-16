@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Chimbometro</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <h1>Chimbometro</h1>
+
+    <p>Escala (px = 1 cm):</p>
+    <input type="number" id="scale" value="37" min="1">
+
+    <div id="camera-container">
+        <video id="video" autoplay playsinline></video>
+        <div id="measure-line"></div>
+    </div>
+
+    <p>Largo: <strong><span id="result">0</span> cm</strong></p>
+    <p id="message"></p>
+
+    <script src="actions.js"></script>
+</body>
+</html>
