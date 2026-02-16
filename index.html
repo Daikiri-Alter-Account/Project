@@ -2,22 +2,23 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Chimbometro</title>
+    <title>Chimbómetro</title>
     <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
 
-    <h1>Chimbometro</h1>
-
-    <p>Escala (px = 1 cm):</p>
-    <input type="number" id="scale" value="37" min="1">
+    <h1 class="title">Chimbómetro</h1>
+    <p class="subtitle">Arrastra la línea para medir 📏</p>
 
     <div id="camera-container">
         <video id="video" autoplay playsinline></video>
         <div id="measure-line"></div>
     </div>
 
-    <p>Largo: <strong><span id="result">0</span> cm</strong></p>
+    <p class="result">
+        Largo: <span id="result">0</span> cm
+    </p>
+
     <p id="message"></p>
 
     <script src="actions.js"></script>
