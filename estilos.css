@@ -62,3 +62,14 @@ video {
     color: #ffb3ff;
     text-shadow: 0 0 10px #9d4edd;
 }
+
+.point {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background: #ff4dff;
+    border-radius: 50%;
+    box-shadow: 0 0 15px #ff4dff, 0 0 30px #9d4edd;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}

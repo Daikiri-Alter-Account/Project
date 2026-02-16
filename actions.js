@@ -1,35 +1,47 @@
 const video = document.getElementById("video");
-const line = document.getElementById("measure-line");
+const container = document.getElementById("camera-container");
 const result = document.getElementById("result");
 const message = document.getElementById("message");
 
-let isDragging = false;
-let startX = 0;
+const SCALE = 37; // px = 1 cm (aprox)
 
-// Escala fija (px = 1 cm)
-const SCALE = 37;
+let points = [];
 
 // Cámara
 navigator.mediaDevices.getUserMedia({ video: true })
     .then(stream => video.srcObject = stream)
-    .catch(() => alert("ombe prende la camara y muestra el chimbo"));
+    .catch(() => alert("ombe activa la camara y pela el chimbo"));
 
-// Inicia medición
-line.addEventListener("mousedown", (e) => {
-    isDragging = true;
-    startX = e.clientX;
+// Click para marcar puntos
+container.addEventListener("click", (e) => {
+    if (points.length === 2) {
+        points = [];
+        document.querySelectorAll(".point").forEach(p => p.remove());
+    }
+
+    const rect = container.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    points.push({ x, y });
+
+    const dot = document.createElement("div");
+    dot.className = "point";
+    dot.style.left = x + "px";
+    dot.style.top = y + "px";
+    container.appendChild(dot);
+
+    if (points.length === 2) {
+        medir();
+    }
 });
 
-// Mide
-document.addEventListener("mousemove", (e) => {
-    if (!isDragging) return;
+function medir() {
+    const [p1, p2] = points;
 
-    const widthPx = e.clientX - startX;
-    if (widthPx <= 0) return;
+    const distanciaPx = Math.abs(p2.x - p1.x);
+    const cm = (distanciaPx / SCALE).toFixed(2);
 
-    line.style.width = widthPx + "px";
-
-    const cm = (widthPx / SCALE).toFixed(2);
     result.textContent = cm;
 
     if (cm < 10) {
@@ -43,9 +55,4 @@ document.addEventListener("mousemove", (e) => {
     } else {
         message.textContent = "💀 el propio tun tun tun vergun";
     }
-});
-
-// Termina medición
-document.addEventListener("mouseup", () => {
-    isDragging = false;
-});
+}
