@@ -2,25 +2,23 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Chimbómetro</title>
+    <title>Chimbómetro IA</title>
     <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
 
-    <h1 class="title">Chimbómetro</h1>
-    <p class="subtitle">Arrastra la línea para medir 📏</p>
+<h1 class="title">Chimbómetro IA 🤖</h1>
+<p class="subtitle">Coloca tu mano junto al objeto</p>
 
-    <div id="camera-container">
-        <video id="video" autoplay playsinline></video>
-        <div id="measure-line"></div>
-    </div>
+<div id="camera-container">
+    <video id="video" autoplay playsinline></video>
+</div>
 
-    <p class="result">
-        Largo: <span id="result">0</span> cm
-    </p>
+<p class="result">Largo estimado: <span id="result">---</span> cm</p>
+<p id="message"></p>
 
-    <p id="message"></p>
-
-    <script src="actions.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.14.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/handpose"></script>
+<script src="actions.js"></script>
 </body>
 </html>

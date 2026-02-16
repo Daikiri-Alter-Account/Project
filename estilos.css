@@ -1,75 +1,40 @@
 body {
-    margin: 0;
-    min-height: 100vh;
-    background: radial-gradient(circle at top, #1a0033, #0b0015);
-    font-family: 'Segoe UI', sans-serif;
+    background: radial-gradient(circle, #1a0033, #0b0015);
     color: #eee;
+    font-family: 'Segoe UI', sans-serif;
     text-align: center;
-    padding: 30px 15px;
+    padding: 30px;
 }
 
 .title {
-    font-size: 3em;
     color: #c77dff;
-    text-shadow: 0 0 15px #9d4edd, 0 0 30px #5a189a;
-    margin-bottom: 5px;
+    text-shadow: 0 0 20px #9d4edd;
 }
 
 .subtitle {
     color: #bbb;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 #camera-container {
-    position: relative;
-    width: 90%;
-    max-width: 520px;
-    margin: 0 auto;
+    max-width: 500px;
+    margin: auto;
     border-radius: 20px;
     overflow: hidden;
-    box-shadow:
-        0 0 25px #7b2cbf,
-        0 0 60px rgba(157, 78, 221, 0.6);
+    box-shadow: 0 0 40px #7b2cbf;
 }
 
 video {
     width: 100%;
-    height: auto;
-    display: block;
-}
-
-#measure-line {
-    position: absolute;
-    top: 50%;
-    left: 30px;
-    height: 4px;
-    width: 80px;
-    background: linear-gradient(90deg, #ff4dff, #9d4edd);
-    box-shadow: 0 0 15px #ff4dff, 0 0 30px #9d4edd;
-    cursor: ew-resize;
-    border-radius: 10px;
 }
 
 .result {
-    margin-top: 20px;
     font-size: 1.4em;
+    margin-top: 15px;
 }
 
 #message {
-    margin-top: 10px;
     font-size: 1.6em;
     font-weight: bold;
     color: #ffb3ff;
-    text-shadow: 0 0 10px #9d4edd;
-}
-
-.point {
-    position: absolute;
-    width: 14px;
-    height: 14px;
-    background: #ff4dff;
-    border-radius: 50%;
-    box-shadow: 0 0 15px #ff4dff, 0 0 30px #9d4edd;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
 }
